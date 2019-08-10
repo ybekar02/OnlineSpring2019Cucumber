@@ -44,4 +44,12 @@ public class LoginStepDefinitions {
     public void user_quits() {
        Driver.closeDriver();
     }
+
+    @Then("user logs in as a driver")
+    public void user_logs_in_as_a_driver() {
+        String username = ConfigurationReader.getProperty("driverusername");
+        String password = ConfigurationReader.getProperty("driverpassword");
+        pages.loginPage().login(username, password);
+    }
+
 }

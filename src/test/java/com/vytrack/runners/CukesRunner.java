@@ -7,8 +7,10 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-
-        tags = {"@storemanager and @negative"},
+        plugin = {
+                "html:target/default-cucumber-reports"
+        },
+        tags = {"@driver"},
         features = {"src/test/resources/features" //to specify where are the features
         },
         //feature contains scenarios
