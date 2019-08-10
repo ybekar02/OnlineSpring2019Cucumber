@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
 
-        tags = {"@negative"},
+        tags = {"@storemanager and @negative"},
         features = {"src/test/resources/features" //to specify where are the features
         },
         //feature contains scenarios
