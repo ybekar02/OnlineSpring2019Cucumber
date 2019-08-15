@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
         plugin = {
+                "json:target/cucumber.json",
                 "html:target/default-cucumber-reports"
         },
         tags = {"@navigation"},
