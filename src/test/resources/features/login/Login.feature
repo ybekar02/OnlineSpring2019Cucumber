@@ -1,9 +1,10 @@
 @VYT-4121
 Feature: Login
   As user I want to login under different roles
-
-  Background:
-    Given user is on the landing page
+# So hook will take care of this action
+#  Hook will open main page
+#  Background:
+#    Given user is on the landing page
 
 
   @storemanager
@@ -20,4 +21,12 @@ Feature: Login
   Scenario: Login as a driver
     Then user logs in as a driver
     And user verifies that "Quick Launchpad" page name is displayed
+
+  @map_example
+  Scenario: Login as different users
+    Given user logs in with following credentials
+      | username | salesmanager101 |
+      | password | UserUser123     |
+    Then user navigates to "Fleet" and "Vehicle Odometer"
+    And user verifies that "Vehicles Odometers" page name is displayed
 
