@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber.json",
                 "html:target/default-cucumber-reports"
         },
-        tags = {"@create_a_car"},
+        tags = {"@create_a_car_with_list_of_maps"},
         features = {"src/test/resources/features" //to specify where are the features
         },
         //feature contains scenarios
@@ -20,7 +20,7 @@ import org.junit.runner.RunWith;
         glue = {"com/vytrack/step_definitions"},
         //dry run - to generate step definitions automatically
         //you will see them in the console output
-        dryRun = true
+        dryRun = false
 
 )
 public class CukesRunner{

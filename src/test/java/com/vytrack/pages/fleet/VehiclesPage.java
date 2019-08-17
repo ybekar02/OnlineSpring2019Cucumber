@@ -42,7 +42,7 @@ public class VehiclesPage extends BasePage {
     }
 
     public void clickToCreateACar() {
-        waitUntilLoaderScreenDisappear();
+        BrowserUtils.waitForStaleElement(createACarBtn);
         createACarBtn.click();
     }
 
