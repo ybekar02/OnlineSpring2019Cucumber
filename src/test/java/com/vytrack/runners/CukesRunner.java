@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber.json",
                 "html:target/default-cucumber-reports"
         },
-        tags = {"@calendar_events"},
+//        tags = {"@calendar_events"},
         features = {"src/test/resources/features" //to specify where are the features
         },
         //feature contains scenarios

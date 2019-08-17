@@ -221,7 +221,7 @@ public class CalendarEventsPage extends BasePage {
     }
 
     public List<String> getTableHeaders() {
-        BrowserUtils.waitForStaleElement(createCalendarEventBtn);
+        waitUntilLoaderScreenDisappear();
         return BrowserUtils.getElementsText(headers);
     }
 
