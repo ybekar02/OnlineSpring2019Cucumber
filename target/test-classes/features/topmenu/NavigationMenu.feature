@@ -8,7 +8,7 @@ Feature: Navigation menu options
 #    instead of driver, I would put admin super user
 #    who has access to every component of the application
 #    driver has access only to certain modules
-
+@WIP
   Scenario: Login as driver and navigate to the Vehicles
     Then user navigates to "Fleet" and "Vehicles"
     And user verifies that "Cars" page name is displayed

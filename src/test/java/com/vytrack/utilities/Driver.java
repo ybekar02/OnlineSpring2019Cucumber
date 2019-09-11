@@ -1,6 +1,7 @@
 package com.vytrack.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,7 +10,12 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class Driver {
     private static WebDriver driver;
@@ -62,6 +68,15 @@ public class Driver {
                     WebDriverManager.getInstance(SafariDriver.class).setup();
                     driver = new SafariDriver();
                     break;
+                case "remotechrome":
+                    DesiredCapabilities cap = new DesiredCapabilities();
+                    cap.setPlatform(Platform.ANY);
+                    try {
+                        driver = new RemoteWebDriver(new URL("http://192.168.1.129:4444/wd/hub"), cap);
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+                    break;
                 default:
                     throw new RuntimeException("Illegal browser type!");
             }
@@ -74,7 +89,7 @@ public class Driver {
         return getDriver(null);
     }
 
-    public  static void closeDriver() {
+    public static void closeDriver() {
         if (driver != null) {
             driver.quit();
             driver = null;

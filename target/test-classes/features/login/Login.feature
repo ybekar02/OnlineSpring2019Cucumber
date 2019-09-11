@@ -22,6 +22,7 @@ Feature: Login
     Then user logs in as a driver
     And user verifies that "Quick Launchpad" page name is displayed
 
+#    map example
   @map_example
   Scenario: Login as different users
     Given user logs in with following credentials
