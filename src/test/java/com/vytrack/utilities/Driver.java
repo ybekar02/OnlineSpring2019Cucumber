@@ -69,10 +69,10 @@ public class Driver {
                     driver = new SafariDriver();
                     break;
                 case "remotechrome":
-                    DesiredCapabilities cap = new DesiredCapabilities();
-                    cap.setPlatform(Platform.ANY);
+                    DesiredCapabilities capabilities = new DesiredCapabilities().chrome();
+                    capabilities.setPlatform(Platform.ANY);
                     try {
-                        driver = new RemoteWebDriver(new URL("http://192.168.1.129:4444/wd/hub"), cap);
+                        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }
